@@ -174,12 +174,42 @@
       <div class="container contact">
         <h2>お問い合わせ</h2>
         <p class="lead">最短3日での開始可。まずはお気軽にご相談ください。</p>
-        <div class="grid grid-3 contact-grid">
-          <div class="card">
-            <h3>Webサイト</h3>
-            <p><a href="https://arc-creation.com" target="_blank" rel="noopener">arc-creation.com</a></p>
-          </div>
+        <!-- Success message (shown after submit) -->
+        <div id="form-success" class="alert-success" hidden>
+          送信ありがとうございました。追ってご連絡いたします。
         </div>
+
+        <!-- Netlify Forms -->
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/?success=1" class="card form">
+          <!-- Required hidden input for Netlify -->
+          <input type="hidden" name="form-name" value="contact">
+          <!-- Honeypot -->
+          <p class="hidden">
+            <label>Don’t fill this out: <input name="bot-field"></label>
+          </p>
+
+          <div class="form-row">
+            <label for="name">お名前</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="form-row">
+            <label for="email">メールアドレス</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="form-row">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+          <div class="form-row checkbox">
+            <label>
+              <input type="checkbox" name="agree" required>
+              個人情報の取り扱いに同意します
+            </label>
+          </div>
+          <div class="cta">
+            <button type="submit" class="btn btn-primary">送信する</button>
+          </div>
+        </form>
       </div>
     </section>
   </main>

@@ -59,3 +59,15 @@ h3{margin:0 0 8px}
 .gallery figure{margin:0}
 .gallery img{width:100%;height:auto;border-radius:10px}
 .muted{color:var(--muted)}
+
+/* Forms */
+.form{max-width:720px;margin:18px auto}
+.form .form-row{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.form label{font-weight:600}
+.form input[type="text"],
+.form input[type="email"],
+.form textarea{padding:12px 14px;border:1px solid var(--border);border-radius:10px;font-size:1rem}
+.form textarea{resize:vertical}
+.form .checkbox label{font-weight:400;display:flex;gap:8px;align-items:flex-start}
+.hidden{display:none}
+.alert-success{background:#e7f6ee;border:1px solid #bfe7d1;color:#11643a;padding:12px 14px;border-radius:10px;margin:12px 0}

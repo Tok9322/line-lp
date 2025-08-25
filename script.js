@@ -15,3 +15,16 @@ links.forEach(a=>{
 
 // Current year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Show success message after Netlify Forms redirect (?success=1)
+(() => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('success') === '1') {
+    const box = document.getElementById('form-success');
+    if (box) {
+      box.hidden = false;
+      // Scroll into view for small screens
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+})();
